@@ -1,0 +1,95 @@
+﻿@model IEnumerable<VisitWro.Models.Place>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NamePlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescriptionPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThumbPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Removed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsFavourite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.Street)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamePlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagePlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThumbPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Removed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFavourite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.Street)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PlaceId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PlaceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.PlaceId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

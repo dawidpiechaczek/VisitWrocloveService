@@ -1,0 +1,114 @@
+﻿@model VisitWro.Models.Event
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Event</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CategoryEvent)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CategoryEvent)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NameEvent)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NameEvent)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DescriptionEvent)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DescriptionEvent)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DateEvent)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DateEvent)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageEvent)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ImageEvent)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ThumbEvent)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ThumbEvent)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Website)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Website)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Removed)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Removed)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IsFavourite)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IsFavourite)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Address.Street)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Address.Street)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.EventId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
