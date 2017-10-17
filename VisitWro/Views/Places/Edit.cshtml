@@ -10,6 +10,8 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Edit</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     @Scripts.Render("~/bundles/jquery")
@@ -117,5 +119,7 @@
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>

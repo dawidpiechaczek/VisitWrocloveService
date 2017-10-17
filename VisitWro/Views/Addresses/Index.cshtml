@@ -23,12 +23,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("VisitWroclove", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Adresy", "Index", "AddressesMVC", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Wydarzenia", "Index", "EventsMVC", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Adresy", "Index", "Addresses", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Wydarzenia", "Index", "Events", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Obiekty", "Index", "Places", new { area = "" }, null)</li>
                 </ul>
             </div>
@@ -41,22 +41,22 @@
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Street)
+                    Ulica
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.HomeNumber)
+                    Numer domu
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.ZipCode)
+                    Kod pocztowy
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.City)
+                    Miasto
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Lat)
+                    Szerokość geograficzna
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Lng)
+                    Długość geograficzna
                 </th>
                 <th></th>
             </tr>

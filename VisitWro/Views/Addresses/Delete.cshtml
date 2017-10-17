@@ -1,0 +1,89 @@
+﻿@model VisitWro.Models.Address
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="col-md-12">
+        <h3>Czy na pewno chcesz usunąć?</h3>
+        <div>
+            <h4>Adres</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    Ulica
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Street)
+                </dd>
+
+                <dt>
+                    Numer domu
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HomeNumber)
+                </dd>
+
+                <dt>
+                    Kod pocztowy
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ZipCode)
+                </dd>
+
+                <dt>
+                    Miasto
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.City)
+                </dd>
+
+                <dt>
+                    Szerokość geograficzna
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Lat)
+                </dd>
+
+                <dt>
+                    Długość geograficzna
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Lng)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <button class="btn btn-default">
+                        @Html.ActionLink("Powrót do listy", "Index")
+                    </button> |
+                    <input type="submit" value="Usuń" class="btn btn-danger" />
+                </div>
+            }
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

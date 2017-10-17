@@ -11,7 +11,7 @@ using VisitWro.Models;
 
 namespace VisitWro.Controllers.MVC
 {
-    public class EventsMVCController : Controller
+    public class EventsController : Controller
     {
         private VisitWroEntities db = new VisitWroEntities();
 

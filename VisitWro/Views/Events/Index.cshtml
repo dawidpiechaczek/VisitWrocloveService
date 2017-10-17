@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VisitWro.Models.Place>
+﻿@model IEnumerable<VisitWro.Models.Event>
 
 @{
     Layout = null;
@@ -34,9 +34,9 @@
         </div>
     </div>
     <div class="col-md-12">
-        <p class="btn btn-info">
-            @Html.ActionLink("Nowy obiekt", "Create")
-        </p>
+        <button class="btn btn-info">
+            @Html.ActionLink("Nowe wydarzenie", "Create")
+        </button>
         <table class="table">
             <tr>
                 <th>
@@ -49,16 +49,19 @@
                     Opis
                 </th>
                 <th>
-                    Telefon
+                    Data
                 </th>
                 <th>
-                    Ocena
+                    Cena
                 </th>
                 <th>
-                    Zdjęcie
+                    Obraz
                 </th>
                 <th>
-                    Ikona
+                    Ikonka
+                </th>
+                <th>
+                    www
                 </th>
                 <th>
                     Usunięte
@@ -76,25 +79,28 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CategoryPlace)
+                        @Html.DisplayFor(modelItem => item.CategoryEvent)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.NamePlace)
+                        @Html.DisplayFor(modelItem => item.NameEvent)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.DescriptionPlace)
+                        @Html.DisplayFor(modelItem => item.DescriptionEvent)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Phone)
+                        @Html.DisplayFor(modelItem => item.DateEvent)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Mark)
+                        @Html.DisplayFor(modelItem => item.Price)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ImagePlace)
+                        @Html.DisplayFor(modelItem => item.ImageEvent)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ThumbPlace)
+                        @Html.DisplayFor(modelItem => item.ThumbEvent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Website)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Removed)
@@ -106,9 +112,9 @@
                         @Html.DisplayFor(modelItem => item.Address.Street)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.PlaceId }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.PlaceId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.PlaceId })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
                     </td>
                 </tr>
             }

@@ -10,6 +10,8 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div>
@@ -102,5 +104,7 @@
         @Html.ActionLink("Edit", "Edit", new { id = Model.PlaceId }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>
