@@ -1,0 +1,98 @@
+﻿@model IEnumerable<VisitWro.Models.Address>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <meta charset="utf-8" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("VisitWroclove", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Adresy", "Index", "Addresses", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Wydarzenia", "Index", "Events", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Obiekty", "Index", "Places", new { area = "" }, null)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <button type="button" class="btn btn-info">
+            @Html.ActionLink("Nowy adres", "Create")
+        </button>
+        <table class="table">
+            <tr>
+                <th>
+                    Ulica
+                </th>
+                <th>
+                    Numer domu
+                </th>
+                <th>
+                    Kod pocztowy
+                </th>
+                <th>
+                    Miasto
+                </th>
+                <th>
+                    Szerokość geograficzna
+                </th>
+                <th>
+                    Długość geograficzna
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HomeNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ZipCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lng)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.AddressId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.AddressId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.AddressId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

@@ -18,9 +18,9 @@ namespace VisitWro.Controllers
         private VisitWroEntities db = new VisitWroEntities();
 
         // GET: api/Places
-        public IQueryable<Place> GetPlaces()
+        public List<Place> GetPlaces()
         {
-            return db.Places;
+            return db.Places.ToList();
         }
 
         // GET: api/Places/5

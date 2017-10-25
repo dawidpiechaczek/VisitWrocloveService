@@ -203,7 +203,6 @@
     <Compile Include="Controllers\API\PlacesController.cs" />
     <Compile Include="Controllers\MVC\EventsController.cs" />
     <Compile Include="Controllers\MVC\PlacesController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -289,6 +288,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\visitWro - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\visitwroclaw.aspnet.pl - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

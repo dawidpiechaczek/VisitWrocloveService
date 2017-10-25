@@ -1,0 +1,126 @@
+﻿@model IEnumerable<VisitWro.Models.Event>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("VisitWroclove", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Adresy", "Index", "Addresses", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Wydarzenia", "Index", "Events", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Obiekty", "Index", "Places", new { area = "" }, null)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <button class="btn btn-info">
+            @Html.ActionLink("Nowe wydarzenie", "Create")
+        </button>
+        <table class="table">
+            <tr>
+                <th>
+                    Kategoria
+                </th>
+                <th>
+                    Nazwa
+                </th>
+                <th>
+                    Opis
+                </th>
+                <th>
+                    Data
+                </th>
+                <th>
+                    Cena
+                </th>
+                <th>
+                    Obraz
+                </th>
+                <th>
+                    Ikonka
+                </th>
+                <th>
+                    www
+                </th>
+                <th>
+                    Usunięte
+                </th>
+                <th>
+                    Ulubione
+                </th>
+                <th>
+                    Ulica
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryEvent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NameEvent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescriptionEvent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateEvent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImageEvent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ThumbEvent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Website)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Removed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsFavourite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address.Street)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

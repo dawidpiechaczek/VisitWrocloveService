@@ -18,9 +18,9 @@ namespace VisitWro.Controllers.API
         private VisitWroEntities db = new VisitWroEntities();
 
         // GET: api/Events
-        public IQueryable<Event> GetEvents()
+        public List<Event> GetEvents()
         {
-            return db.Events;
+            return db.Events.ToList();
         }
 
         // GET: api/Events/5

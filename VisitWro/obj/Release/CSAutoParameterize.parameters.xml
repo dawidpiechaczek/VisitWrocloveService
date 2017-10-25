@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="VisitWroEntities-Web.config Connection String" description="VisitWroEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.ModelWroclaw.csdl|res://*/Models.ModelWroclaw.ssdl|res://*/Models.ModelWroclaw.msl;provider=System.Data.SqlClient;provider connection string=&quot;Server=tcp:wrocdb.database.windows.net,1433;Initial Catalog=WrocDb;Persist Security Info=False;User ID=DPIECHAC;Password=Superbaza1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\DPIECHAC\\source\\repos\\VisitWro\\VisitWro\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='VisitWroEntities']/@connectionString" />
+  </parameter>
+</parameters>

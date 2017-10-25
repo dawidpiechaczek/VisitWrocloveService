@@ -1,0 +1,120 @@
+﻿@model IEnumerable<VisitWro.Models.Place>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("VisitWroclove", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Adresy", "Index", "Addresses", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Wydarzenia", "Index", "Events", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Obiekty", "Index", "Places", new { area = "" }, null)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <p class="btn btn-info">
+            @Html.ActionLink("Nowy obiekt", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    Kategoria
+                </th>
+                <th>
+                    Nazwa
+                </th>
+                <th>
+                    Opis
+                </th>
+                <th>
+                    Telefon
+                </th>
+                <th>
+                    Ocena
+                </th>
+                <th>
+                    Zdjęcie
+                </th>
+                <th>
+                    Ikona
+                </th>
+                <th>
+                    Usunięte
+                </th>
+                <th>
+                    Ulubione
+                </th>
+                <th>
+                    Ulica
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryPlace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NamePlace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescriptionPlace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mark)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImagePlace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ThumbPlace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Removed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsFavourite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address.Street)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PlaceId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.PlaceId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.PlaceId })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
