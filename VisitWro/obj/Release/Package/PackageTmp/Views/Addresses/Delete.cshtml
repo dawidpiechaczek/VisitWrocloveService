@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
+    <title>Usuń</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -75,9 +75,9 @@
                 @Html.AntiForgeryToken()
 
                 <div class="form-actions no-color">
-                    <button class="btn btn-default">
-                        @Html.ActionLink("Powrót do listy", "Index")
-                    </button> |
+                    <a href="/Addresses" class="btn btn-default">
+                        Powrót do listy
+                    </a> |
                     <input type="submit" value="Usuń" class="btn btn-danger" />
                 </div>
             }

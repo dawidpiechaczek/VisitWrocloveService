@@ -10,6 +10,25 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <style>
+        .button_area {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+            .button_area a {
+                background: #0094ff;
+                color: #ffffff;
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+
+        table {
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+    </style>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -28,16 +47,18 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Adresy", "Index", "Addresses", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Wydarzenia", "Index", "Events", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Obiekty", "Index", "Places", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Miejsca", "Index", "Places", new { area = "" }, null)</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="col-md-12">
-        <p class="btn btn-info">
-            @Html.ActionLink("Nowy obiekt", "Create")
-        </p>
-        <table class="table">
+        <div class="button_area">
+            <a class="btn" href="/Places/Create">
+                Utwórz nowe miejsce
+            </a>
+        </div>
+        <table class="table table-hover">
             <tr>
                 <th>
                     Kategoria
